@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
         .imgProdutos {
-            margin: 10px 10% 10px;
-            max-width: 80%;
-            max-height: 80%;
+            margin: 10px 20% 10px;
+            max-width: 60%;
+            max-height: 60%;
         }
         #bodyCategorias {
             overflow-x: hidden;
         }
         #anuncioPago{
             display: grid;
-            grid-template-columns: repeat(2,auto) ;
+            grid-template-columns: repeat(2, 40%);
+            max-width: 100%;
         }
         .secao {
             margin-left:24%;
@@ -27,10 +28,8 @@
             margin-left: 10%;
             cursor: pointer;
             box-shadow: 0px 5px 10px;
-            margin-right: 10px;
             border-radius: 5px;
-            max-width: calc(100% - 10%);
-            height: auto;
+            width: calc(35% + 100px); 
             margin-bottom: 20px;
         }
         .nomeProduto {
@@ -38,7 +37,7 @@
         }
         .preco {
             margin: 30px 0px 20px;
-            margin-left: 30px;
+            margin-left: 20px;
         }
         .compra {
             cursor: pointer;
@@ -48,7 +47,7 @@
             margin-bottom: 10px;
             border-radius: 5px;
             border: solid 1px #fff;
-            background-color: blue;
+            background-color: pink;
         }
         .compra:hover {
             transition: 1s;
@@ -70,7 +69,7 @@
     <main>
         <h3 class="secao">Destaques recentes</h3>
         <div id="anuncioPago">
-            <div class="caixa">
+            <div class="caixa" class="par">
                 <div>
                     <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
                     <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
@@ -78,7 +77,7 @@
                     <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
                 </div>
             </div>
-            <div class="caixa">
+            <div class="caixa" class="impar">
                 <div>
                     <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
                     <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
@@ -86,7 +85,7 @@
                     <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
                 </div>
             </div>
-            <div class="caixa">
+            <div class="caixa" class="par">
                 <div>
                     <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
                     <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
@@ -94,7 +93,7 @@
                     <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
                 </div>
             </div>
-            <div class="caixa">
+            <div class="caixa" class="impar">
                 <div>
                     <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
                     <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
@@ -103,10 +102,15 @@
                 </div>
             </div>
         </div>
+        <div class="filtro">
+            <div>
+               <h1>ou</h1> 
+            </div>
+        </div>
     </main>
 
     <aside>
-        <h1>aside</h1>
+        
     </aside>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
