@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./../css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beleza Sustentável</title>
+  <link rel="stylesheet" href="./../css/style.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
     <style>
-        .imgProdutos {
-            margin: 10px 20% 10px;
-            max-width: 60%;
-            max-height: 60%;
+        @media only screen {
+        #sectionCategorias {
+            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: 1fr; /* 1 card por linha no celular */
+            }
+        }
+        @media only screen and (min-width:750px) {
+            .secao2 {
+            margin-left:40%;
+            margin-bottom: 4%;
+            width:300px;
+            }
+        }
+        @media only screen and (max-width:750px) {
+            #asideCategorias {
+            position: fixed;
+            top: 20%;
+            right: 5px;
+            display: grid;
+            grid-area: aside;
+            }
         }
         #bodyCategorias {
             overflow-x: hidden;
         }
-        #anuncioPago{
+        #sectionCategorias {
             display: grid;
-            grid-template-columns: repeat(2, 40%);
-            max-width: 100%;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 4%; 
+            margin-left: 2%;
+            grid-area: section;
+        }
+        #asideCategorias {
+            position: fixed;
+            margin: 12% 0% 0% 70%;
+            display: grid;
+            grid-area: aside;
+        }
+        .grade {
+            display: grid;
+            grid-template-areas: 
+            "section aside" 
+            ;
+            grid-template-columns:65% 35%
         }
         .secao {
             margin-left:24%;
             margin-bottom: 4%;
         }
-        .caixa {
-            margin-left: 10%;
-            cursor: pointer;
-            box-shadow: 0px 5px 10px;
-            border-radius: 5px;
-            width: calc(35% + 100px); 
-            margin-bottom: 20px;
+        .secao2 {
+            margin-left:40%;
+            margin-bottom: 4%;
         }
-        .nomeProduto {
-            margin: 0px 0px 0px 15px;
-        }
-        .preco {
-            margin: 30px 0px 20px;
-            margin-left: 20px;
-        }
-        .compra {
-            cursor: pointer;
-            z-index: 10;
-            margin-left: 10px;
-            max-width: 90%;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: solid 1px #fff;
-            background-color: pink;
-        }
-        .compra:hover {
-            transition: 1s;
-            transform: scale(0.94);
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
-            
-        }
-        .compra:active {
-            transition: 1.2s;
-            transform: scale(1.015);
+        .filtro-card {
+            margin-top: 10%;
+            border: #27ae60 solid 1px;
+            border-radius: 15px;
         }
     </style>
 </head>
@@ -65,48 +75,84 @@
     <header>
         <h1>header</h1>
     </header>
+    <h3 class="secao">Destaques recentes</h3>
+    <main class="grade">
+        <section id="sectionCategorias">
+            <div class="card produto-card border-success shadow-sm h-100" id="produto1">
+                <a href="detalhe.html?id=produto1">
+                <img src="../img/oleoNatural.png" class="card-img-top p-2" alt="oleo essencial de pimenta" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">oleo essencial de hortelã pimenta</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 42,00</p>
+                <a href="detalhe.html?id=produto2" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+           <div class="card produto-card border-success shadow-sm h-100" id="produto2">
+                <a href="detalhe.html?id=produto2">
+                <img src="../img/gelatina.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Gelatina Explosão De Hialurônico Beleza Natural</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 25,49</p>
+                <a href="detalhe.html?id=produto2" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+            <div class="card produto-card border-success shadow-sm h-100" id="produto3">
+                <a href="detalhe.html?id=produto1">
+                <img src="../img/oleoNatural.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Natural</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 39,90</p>
+                <a href="detalhe.html?id=produto2" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+            <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                <a href="detalhe.html?id=produto1">
+                <img src="../img/oleoNatural.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Natural</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 39,90</p>
+                <a href="detalhe.html?id=produto2" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+            <h3 class="secao2">Nossos produtos</h3>
 
-    <main>
-        <h3 class="secao">Destaques recentes</h3>
-        <div id="anuncioPago">
-            <div class="caixa" class="par">
-                <div>
-                    <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
-                    <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
-                    <h4 class="preco">R$42,00</h4>
-                    <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
-                </div>
-            </div>
-            <div class="caixa" class="impar">
-                <div>
-                    <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
-                    <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
-                    <h4 class="preco">R$42,00</h4>
-                    <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
-                </div>
-            </div>
-            <div class="caixa" class="par">
-                <div>
-                    <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
-                    <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
-                    <h4 class="preco">R$42,00</h4>
-                    <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
-                </div>
-            </div>
-            <div class="caixa" class="impar">
-                <div>
-                    <img src="./../img/oleoNatural.png" alt="" class="imgProdutos">
-                    <h4 class="nomeProduto">oleo essencial hortelã pimenta</h4>
-                    <h4 class="preco">R$42,00</h4>
-                    <button class="compra">Adicionar ao carrinho <img src="./../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button>
-                </div>
-            </div>
+        </section>
+        
+        <section id="asideCategorias">
+            <div class="filtro-card">
+        <h3>Filtrar Produtos</h3>
+        <div class="filtro-item">
+        <label>
+            <input type="checkbox" name="tipo" value="shampoo" /> Shampoo
+        </label>
         </div>
-        <div class="filtro">
-            <div>
-               <h1>ou</h1> 
-            </div>
+        <div class="filtro-item">
+        <label>
+            <input type="checkbox" name="tipo" value="condicionador" /> Condicionador
+        </label>
         </div>
+        <div class="filtro-item">
+        <label>
+            <input type="checkbox" name="vegano" value="sim" /> Vegano
+        </label>
+        </div>
+
+        <button class="btn btn-success w-100 mt-3">Aplicar Filtro</button>
+        </div>
+
+        </section>
     </main>
 
     <aside>
