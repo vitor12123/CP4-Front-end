@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhe do Produto • Eco Trend</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <meta name="description" content="Detalhes do produto, preço, descrição e benefícios dos itens de beleza sustentáveis da Eco Trend." />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background:#27ae60;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-white" href="index.html">
+        <i class="fas fa-leaf me-2"></i>Eco Trend
+      </a>
+      <form class="d-flex ms-auto" style="width:40%;">
+        <input class="form-control me-2" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
+        <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav class="bg-light" aria-label="breadcrumb">
+    <ol class="breadcrumb container py-2 mb-0">
+      <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Início</a></li>
+      <li class="breadcrumb-item"><a href="index.html#produtos" class="text-decoration-none">Produtos</a></li>
+      <li class="breadcrumb-item active" id="bc-produto" aria-current="page">Carregando...</li>
+    </ol>
+  </nav>
+
+  <!-- Conteúdo -->
+  <main class="container my-4">
+    <div id="alertaNaoEncontrado" class="alert alert-warning d-none" role="alert">
+      Produto não encontrado. <a href="index.html" class="alert-link">Voltar à página inicial</a>.
+    </div>
+
+    <div id="areaProduto" class="row g-4 align-items-start d-none">
+      <!-- Imagem principal -->
+      <div class="col-lg-6">
+        <div class="card border-success shadow-sm">
+          <img id="produtoImg" src="" class="card-img-top p-3" alt="Imagem do produto" style="height:380px; object-fit:contain;" />
+        </div>
+        <div class="mt-3 small text-muted">
+          <i class="fa-regular fa-circle-check me-1"></i>Produto com embalagem reciclável
+        </div>
+      </div>
+
+      <!-- Infos -->
+      <div class="col-lg-6">
+        <h1 id="produtoTitulo" class="h3 fw-bold" style="color:#27ae60;">Carregando...</h1>
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="badge" style="background:#27ae60;">Eco</span>
+          <span class="badge" style="background:#2ecc40;">Vegano</span>
+        </div>
+        <p id="produtoDescricao" class="text-secondary">—</p>
+        <p class="fs-3 fw-bold mb-2" id="produtoPreco" style="color:#2ecc40;">R$ 0,00</p>
+
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <label for="qtd" class="form-label mb-0">Quantidade</label>
+          <input type="number" id="qtd" class="form-control" style="max-width:110px;" min="1" value="1" />
+        </div>
+
+        <div class="d-grid d-sm-flex gap-2 mb-3">
+          <button class="btn btn-success fw-bold" id="btnComprar">
+            <i class="fas fa-bolt me-1"></i>Comprar agora
+          </button>
+          <button class="btn btn-outline-success fw-bold" id="btnCarrinho">
+            <i class="fas fa-cart-plus me-1"></i>Adicionar ao carrinho
+          </button>
+        </div>
+
+        <ul class="list-unstyled small text-secondary mb-4">
+          <li class="mb-1"><i class="fa-solid fa-truck-fast me-2" style="color:#27ae60"></i>Frete grátis acima de R$150</li>
+          <li class="mb-1"><i class="fa-solid fa-arrow-rotate-left me-2" style="color:#27ae60"></i>Devolução gratuita</li>
+          <li class="mb-1"><i class="fa-solid fa-shield-heart me-2" style="color:#27ae60"></i>Compra segura</li>
+        </ul>
+
+        <a href="index.html" class="text-decoration-none"><i class="fa-solid fa-chevron-left me-1"></i>Voltar</a>
+      </div>
+    </div>
+
+    <!-- Produtos relacionados -->
+    <section id="relacionados" class="mt-5 d-none">
+      <h2 class="h5 fw-bold mb-3" style="color:#27ae60;">Você também pode gostar</h2>
+      <div class="row g-3" id="listaRelacionados"></div>
+    </section>
+  </main>
+
+  <script>
+   
+    const produtos = {
+      produto1: { id:'produto1', titulo: 'Shampoo Natural', descricao: 'Shampoo sem sulfato, ideal para todos os tipos de cabelo. Fórmula vegana e sustentável.', preco: 39.9, img: 'img/produto1.jpg', categoria: 'cabelo' },
+      produto2: { id:'produto2', titulo: 'Creme Facial Vegano', descricao: 'Creme hidratante facial com ingredientes naturais, livre de parabenos.', preco: 59.9, img: 'img/produto2.jpg', categoria: 'rosto' },
+      produto3: { id:'produto3', titulo: 'Óleo Corporal Orgânico', descricao: 'Óleo corporal 100% orgânico, hidrata e nutre a pele profundamente.', preco: 49.9, img: 'img/produto3.jpg', categoria: 'corpo' },
+      produto4: { id:'produto4', titulo: 'Sabonete Natural', descricao: 'Limpeza suave com óleos vegetais.', preco: 14.9, img: 'img/produto4.jpg', categoria: 'banho' },
+      produto5: { id:'produto5', titulo: 'Máscara Capilar Nutritiva', descricao: 'Repõe lipídios e brilho sem silicones.', preco: 69.9, img: 'img/produto5.jpg', categoria: 'cabelo' },
+      produto6: { id:'produto6', titulo: 'Condicionador Vegano', descricao: 'Desembaraço leve, sem parabenos.', preco: 44.9, img: 'img/produto6.jpg', categoria: 'cabelo' },
+    
+    };
+
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    function formatBRL(value) {
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function montarRelacionados(atualId) {
+      const container = document.getElementById('listaRelacionados');
+      container.innerHTML = '';
+      const cards = Object.values(produtos)
+        .filter(p => p.id !== atualId)
+        .slice(0, 2)
+        .map(p => `
+          <div class="col-md-6">
+            <div class="card border-success h-100 shadow-sm">
+              <a href="detalhe.html?id=${p.id}">
+                <img src="${p.img}" alt="${p.titulo}" class="card-img-top p-2" style="height:200px; object-fit:contain;" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title" style="color:#27ae60;">${p.titulo}</h5>
+                <p class="fw-bold mb-2" style="color:#2ecc40;">${formatBRL(p.preco)}</p>
+                <a class="btn btn-success w-100 fw-bold" href="detalhe.html?id=${p.id}">
+                  <i class="fa-solid fa-circle-info me-1"></i>Ver detalhes
+                </a>
+              </div>
+            </div>
+          </div>`)
+        .join('');
+      container.innerHTML = cards;
+      document.getElementById('relacionados').classList.remove('d-none');
+    }
+
+    function carregarProduto() {
+      const id = getParam('id');
+      const produto = produtos[id];
+
+      const alerta = document.getElementById('alertaNaoEncontrado');
+      const area = document.getElementById('areaProduto');
+      const bc = document.getElementById('bc-produto');
+
+      if (!produto) {
+        alerta.classList.remove('d-none');
+        area.classList.add('d-none');
+        bc.textContent = 'Produto não encontrado';
+        document.title = 'Produto não encontrado • Eco Trend';
+        return;
+      }
+
+      // Preenche dados
+      document.getElementById('produtoTitulo').textContent = produto.titulo;
+      document.getElementById('produtoDescricao').textContent = produto.descricao;
+      document.getElementById('produtoPreco').textContent = formatBRL(produto.preco);
+      document.getElementById('produtoImg').src = produto.img;
+      document.getElementById('produtoImg').alt = produto.titulo;
+
+      // Breadcrumb e título
+      bc.textContent = produto.titulo;
+      document.title = `${produto.titulo} • Eco Trend`;
+
+      // Exibe seção
+      area.classList.remove('d-none');
+
+      // Relacionados
+      montarRelacionados(produto.id);
+
+      // Ações de botão (mock)
+      document.getElementById('btnComprar').addEventListener('click', () => {
+        const qtd = Number(document.getElementById('qtd').value || 1);
+        alert(`Compra rápida iniciada: ${qtd}x ${produto.titulo}.`);
+      });
+      document.getElementById('btnCarrinho').addEventListener('click', () => {
+        const qtd = Number(document.getElementById('qtd').value || 1);
+        alert(`${qtd}x ${produto.titulo} adicionado(s) ao carrinho.`);
+      });
+
+      // JSON-LD (SEO)
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: produto.titulo,
+        description: produto.descricao,
+        image: window.location.origin + '/' + produto.img,
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'BRL',
+          price: produto.preco.toFixed(2),
+          availability: 'https://schema.org/InStock'
+        },
+        brand: { '@type': 'Brand', name: 'Eco Trend' }
+      });
+      document.head.appendChild(script);
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarProduto);
+  </script>
+
+  <style>
+    body { background:#f5f5f5; }
+    .btn-success { background:#27ae60; color:#fff; border:none; }
+    .btn-success:hover { background:#219150; color:#fff; }
+    .btn-outline-success { color:#27ae60; border-color:#27ae60; }
+    .btn-outline-success:hover { color:#fff; background:#27ae60; }
+    .border-success { border-color:#27ae60 !important; }
+  </style>
+</body>
+</html>
