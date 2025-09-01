@@ -17,7 +17,6 @@
     .border-success { border-color:#27ae60 !important; }
     .badge-eco { background:#27ae60; }
     .badge-vegano { background:#2ecc40; }
-    /* Cards relacionados */
     #listaRelacionados .card { border-color:#27ae60; }
     #listaRelacionados .card-title { color:#27ae60; }
     #listaRelacionados p { color:#2ecc40; font-weight:bold; }
@@ -29,7 +28,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light" style="background:#27ae60;">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold text-white" href="index.html">
@@ -41,8 +39,6 @@
       </form>
     </div>
   </nav>
-
-  <!-- Breadcrumb -->
   <nav class="bg-light" aria-label="breadcrumb">
     <ol class="breadcrumb container py-2 mb-0">
       <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Início</a></li>
@@ -51,18 +47,12 @@
     </ol>
   </nav>
 
-  <!-- Conteúdo -->
   <main class="container my-4">
-
-    <!-- Alerta produto não encontrado -->
     <div id="alertaNaoEncontrado" class="alert alert-warning d-none" role="alert">
       Produto não encontrado. <a href="index.html" class="alert-link">Voltar à página inicial</a>.
     </div>
 
-    <!-- Produto -->
     <div id="areaProduto" class="row g-4 align-items-start d-none">
-
-      <!-- Imagem do Produto -->
       <div class="col-lg-6">
         <div class="card border-success shadow-sm">
           <img id="produtoImg" src="./../img/oleoNatural.png" class="card-img-top p-3" alt="Produto" style="height:380px; object-fit:contain;" />
@@ -71,8 +61,6 @@
           <i class="fa-regular fa-circle-check me-1"></i>Produto com embalagem reciclável
         </div>
       </div>
-
-      <!-- Informações do Produto -->
       <div class="col-lg-6">
         <h1 id="produtoTitulo" class="h3 fw-bold" style="color:#27ae60;">Carregando...</h1>
         <div class="d-flex align-items-center gap-2 mb-2">
@@ -106,7 +94,6 @@
       </div>
     </div>
 
-    <!-- Produtos Relacionados -->
     <section id="relacionados" class="mt-5 d-none">
       <h2 class="h5 fw-bold mb-3" style="color:#27ae60;">Você também pode gostar</h2>
       <div class="row g-3" id="listaRelacionados"></div>
@@ -114,7 +101,6 @@
 
   </main>
 
-  <!-- Scripts -->
   <script>
     const produtos = {
       produto1: { id:'produto1', titulo: 'Oleo essencial de hortelã pimenta', descricao: 'Oleo aromatêrapeutico, melhora a digestão, e alivia a dor, 15ml natural.', preco: 42.00, img: '../img/oleoNatural.png', categoria: 'Pele   ' },
@@ -194,7 +180,6 @@
         alert(`${qtd}x ${produto.titulo} adicionado(s) ao carrinho.`);
       });
 
-      // JSON-LD SEO
       const script = document.createElement('script');
       script.type = 'application/ld+json';
       script.text = JSON.stringify({
