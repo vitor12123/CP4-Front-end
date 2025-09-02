@@ -160,59 +160,63 @@
 
     <script>
       const produtos = {
-        produto1: {
-          id: "produto1",
-          titulo: "Shampoo Natural",
-          descricao:
-            "Shampoo sem sulfato, ideal para todos os tipos de cabelo. Fórmula vegana e sustentável.",
-          preco: 39.9,
-          img: "img/produto1.jpg",
-          categoria: "cabelo",
-        },
-        produto2: {
-          id: "produto2",
-          titulo: "Creme Facial Vegano",
-          descricao:
-            "Creme hidratante facial com ingredientes naturais, livre de parabenos.",
-          preco: 59.9,
-          img: "img/produto2.jpg",
-          categoria: "rosto",
-        },
-        produto3: {
-          id: "produto3",
-          titulo: "Óleo Corporal Orgânico",
-          descricao:
-            "Óleo corporal 100% orgânico, hidrata e nutre a pele profundamente.",
-          preco: 49.9,
-          img: "img/produto3.jpg",
-          categoria: "corpo",
-        },
-        produto4: {
-          id: "produto4",
-          titulo: "Sabonete Natural",
-          descricao: "Limpeza suave com óleos vegetais.",
-          preco: 14.9,
-          img: "img/produto4.jpg",
-          categoria: "banho",
-        },
-        produto5: {
-          id: "produto5",
-          titulo: "Máscara Capilar Nutritiva",
-          descricao: "Repõe lipídios e brilho sem silicones.",
-          preco: 69.9,
-          img: "img/produto5.jpg",
-          categoria: "cabelo",
-        },
-        produto6: {
-          id: "produto6",
-          titulo: "Condicionador Vegano",
-          descricao: "Desembaraço leve, sem parabenos.",
-          preco: 44.9,
-          img: "img/produto6.jpg",
-          categoria: "cabelo",
-        },
-      };
-
+        produto1: 
+        { 
+        id:'produto1', 
+        titulo: 'Oleo essencial de hortelã pimenta', 
+        descricao: 'Oleo aromatêrapeutico, melhora a digestão, e alivia a dor, 15ml natural.', 
+        preco: 42.00, 
+        img: '../img/oleoNatural.png', 
+        categoria: 'Pele   ' },
+        produto2: 
+        { 
+        id:'produto2',
+        titulo: 'Gelatina Explosão De Hialurônico Beleza Natural', 
+        descricao: 'A sua finalização acaba de ganhar novos aliados! 2 lançamentos e 1 novo formato, as gelatinas chegaram para transformar a rotina de quem ama definição, hidratação e vitalidade dos fios, 500G natural.', 
+        preco: 25.49, 
+        img: '../img/gelatina.png', 
+        categoria: 'rosto' },
+        produto3: 
+        { 
+        id:'produto3',
+        titulo: 'Maybelline NY Super Stay Vinyl',
+        descricao: 'Com novo Vinyl Ink de Maybelline New York é hora de se contentar com nada menos que a perfeição. Esse batom é da família Superstay, de produtos de alta performance e já conhecidos pela sua longa duração.', 
+        preco: 89.99, 
+        img: '../img/batom1.png', 
+        categoria: 'boca' },
+        produto4: 
+        { 
+        id:'produto4', 
+        titulo: 'Shampoo Líquido Natural - Regenerador Maria da Selva',
+        descricao: 'O Shampoo Maria da Selva é indicado para cabelos ressecados e fragilizados. Possui limpeza suave, fortalece o fio, prevenindo a queda e é rica em poderosos ingredientes naturais. Ideal para uso diário.',
+        preco: 83.79,
+        img: '../img/shampoo1.png', 
+        categoria: 'cabelo' },
+        produto5: 
+        { 
+        id:'produto5', 
+        titulo: 'Shampoo Natural', 
+        descricao: 'Shampoo sem sulfato, ideal para todos os tipos de cabelo. Fórmula vegana e sustentável.', 
+        preco: 39.9, 
+        img: 'img/produto1.jpg', 
+        categoria: 'cabelo' },
+        produto6: 
+        { 
+        id:'produto6', 
+        titulo: 'Creme Facial Vegano', 
+        descricao: 'Creme hidratante facial com ingredientes naturais, livre de parabenos.', 
+        preco: 59.9, 
+        img: 'img/produto2.jpg', 
+        categoria: 'rosto' },
+        produto7: 
+        { 
+        id:'produto7', 
+        titulo: 'Óleo Corporal Orgânico', 
+        descricao: 'Óleo corporal 100% orgânico, hidrata e nutre a pele profundamente.', 
+        preco: 49.9, 
+        img: 'img/produto3.jpg', 
+        categoria: 'corpo' },
+      }
       function getParam(name) {
         const url = new URL(window.location.href);
         return url.searchParams.get(name);
