@@ -1,12 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beleza Sustentável</title>
+  <link rel="stylesheet" href="./../css/style.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <style>
+        @media only screen {
+        #sectionCategorias { 
+            grid-template-columns: 1fr; 
+            }
+        }
+        @media only screen and (min-width:750px) {
+            .secao2 {
+            margin-left:40%;
+            margin-bottom: 4%;
+            width:300px;
+            }
+        }
+        @media only screen and (max-width:750px) {
+            #asideCategorias {
+            position: fixed;
+            top: 20%;
+            right: 5px;
+            display: grid;
+            grid-area: aside;
+            }
+        }
+        #bodyCategorias {
+            overflow-x: hidden;
+        }
+        #sectionCategorias {
+            display: grid;
+            grid-template-columns: repeat(auto, 1fr); 
+            gap: 1rem; /* espaçamento entre cards */
+            margin: 0 auto;
+        }
+        #asideCategorias {
+            position: fixed;
+            margin: 5% 0% 0% 70%;
+            display: grid;
+            grid-area: aside;
+        }
+        .grade {
+            margin-left: 2%;
+            display: grid;
+            grid-template-areas: 
+            "section aside" 
+            ;
+            grid-template-columns:65% 35%
+        }
+        .secao {
+            margin-left:24%;
+            margin-bottom: 4%;
+        }
+        .secao2 {
+            margin-left:40%;
+            margin-bottom: 4%;
+        }
+        .filtro-card {
+            margin-top: 10%;
+            border: #27ae60 solid 1px;
+            border-radius: 15px;
+        }
+        #footer {
+            justify-items: center;
+            align-content: center;
+            display: grid;
+            grid-column: auto;
+            grid-row: auto;
+        }
+        #footer2 {
+            padding-left: 15%;
+        }
+    </style>
 </head>
-<body>
-    
+<body id="bodyCategorias">
+    <header class="navbar navbar-expand-lg navbar-light" style="background:#27ae60;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#" style="color:#fff; font-size:1.7rem;">
+                <i class="fas fa-leaf me-2"></i>Eco Trend
+            </a>
+            <form class="d-flex mx-auto" style="width:40%;">
+                <input class="form-control me-2" type="search" placeholder="Buscar produtos de beleza..." aria-label="Buscar">
+                <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link fw-bold" href="./index.html" style="color:#fff;">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="./contatos.html" style="color:#fff;">Contatos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-lg" style="color:#fff;"></i></a></li>
+            </ul>
+        </div>
+    </header>
+    <h3 class="secao">Destaques recentes</h3>
+    <main class="grade">
+        <section id="sectionCategorias">
+            <div class="card produto-card border-success shadow-sm h-100" id="produto1">
+                <a href="detalhe.html?id=produto1">
+                <img src="../img/oleoNatural.png" class="card-img-top p-2" alt="oleo essencial de pimenta" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">oleo essencial de hortelã pimenta</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 42,00</p>
+                <a href="detalhe.html?id=produto1" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+           <div class="card produto-card border-success shadow-sm h-100" id="produto2">
+                <a href="detalhe.html?id=produto2">
+                <img src="../img/gelatina.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Gelatina Explosão De Hialurônico </h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 25,49</p>
+                <a href="detalhe.html?id=produto2" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+            <div class="card produto-card border-success shadow-sm h-100" id="produto3">
+                <a href="detalhe.html?id=produto3">
+                <img src="../img/batom1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Maybelline NY Super Stay Vinyl </h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 89,99</p>
+                <a href="detalhe.html?id=produto3" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+            <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                <a href="detalhe.html?id=produto4">
+                <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                </a>
+                <div class="card-body">
+                <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                    <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />Adicionar ao carrinho
+                </a>
+                </div>
+            </div>
+
+            <div class="mais-conteudo mt-5">
+    <h3 class="secao2 mb-4">Nossos produtos</h3>
+
+    <div class="produtos container">
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4b" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card produto-card border-success shadow-sm h-100" id="produto4">
+                    <a href="detalhe.html?id=produto4">
+                        <img src="../img/shampoo1.png" class="card-img-top p-2" alt="Shampoo Natural" style="height:220px; object-fit:contain;" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold" style="color:#27ae60;">Shampoo Líquido Natural - Regenerador Maria da Selva</h5>
+                        <p class="card-text mb-1" style="color:#2ecc40; font-size:1.4rem; font-weight:bold;">R$ 83,79</p>
+                        <a href="detalhe.html?id=produto4" class="btn btn-success w-100 fw-bold">
+                            <img src="../img/add_shopping_cart_24dp_000_FILL0_wght400_GRAD0_opsz24.png" alt="Carrinho" style="width:20px; height:20px; margin-right:5px;" />
+                            Adicionar ao carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </section>
+
+        <section id="asideCategorias">
+            <div class="filtro-card">
+                <h3>Filtrar Produtos</h3>
+                <div class="filtro-item">
+                    <label>
+                        <input type="checkbox" name="tipo" value="shampoo" /> pele
+                    </label>
+                </div>
+                <div class="filtro-item">
+                    <label>
+                        <input type="checkbox" name="tipo" value="condicionador" /> cabelo
+                    </label>
+                </div>
+                <div class="filtro-item">
+                    <label>
+                        <input type="checkbox" name="vegano" value="sim" /> boca
+                    </label>
+                </div>
+
+                <button class="btn btn-success w-100 mt-3">Aplicar Filtro</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer2" class="bg-success text-white pt-5 pb-3 mt-5">
+        <div id="footer" class="col-md-4 mb-4">
+        <h5>Links Úteis</h5>
+        <ul class="list-unstyled d-flex flex-wrap gap-3">
+          <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Produtos</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Sobre</a></li>
+        </ul>
+      </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
+<script src="./../script/app.js"></script>
 </html>
