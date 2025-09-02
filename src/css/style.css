@@ -1,0 +1,26 @@
+.navbar-nav .nav-link,
+.navbar-brand.btn {
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px;
+  color: #fff;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.btn:hover,
+.navbar-brand.btn:hover {
+  background: #fff !important;
+  color: #111 !important;
+}
+.navbar-nav .nav-link,
+.navbar-brand.btn {
+  font-size: 1.25rem;
+  padding: 14px 24px;
+}
+header.navbar {
+  padding-top: 26px !important;
+  padding-bottom: 20px !important;
+}
+footer {
+  padding-top: 48px;
+  padding-bottom: 36px;
+  font-size: 1.35rem;
+}
